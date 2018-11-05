@@ -1,0 +1,29 @@
+
+<div class="col-md-6" >
+  <h2> Customer Details</h2>
+  
+  <table class="table table-striped" >
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Balance</th>
+      
+    </tr>
+  </thead>
+    <tbody>
+    <tr *ngFor="let cust of customers">
+      
+      <td>{{cust.custID}}</td>
+      <td>{{cust.custName}}</td>
+      <td>{{cust.balance}}</td>
+
+      <td><button class="btn btn-danger" (click)="deleteCustomer(cust)"> Delete User</button></td>
+      <td><a class="btn btn-primary" routerLink="/upcustomer/{{cust.custID}}"> Update User</a></td>
+    
+    </tr>
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>
+  </div> 
